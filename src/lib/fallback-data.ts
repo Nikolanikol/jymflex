@@ -12,8 +12,8 @@ export const fallbackCategories: Category[] = [
     name_ru: 'Протеин',
     name_en: 'Protein',
     slug: 'protein',
-    image_url: null,
-    description: null,
+    image_url: undefined,
+    description: undefined,
     created_at: '2024-01-01T00:00:00Z',
   },
   {
@@ -22,8 +22,8 @@ export const fallbackCategories: Category[] = [
     name_ru: 'Аминокислоты',
     name_en: 'Amino Acids',
     slug: 'amino-acids',
-    image_url: null,
-    description: null,
+    image_url: undefined,
+    description: undefined,
     created_at: '2024-01-01T00:00:00Z',
   },
   {
@@ -32,8 +32,8 @@ export const fallbackCategories: Category[] = [
     name_ru: 'Витамины',
     name_en: 'Vitamins',
     slug: 'vitamins',
-    image_url: null,
-    description: null,
+    image_url: undefined,
+    description: undefined,
     created_at: '2024-01-01T00:00:00Z',
   },
   {
@@ -42,17 +42,17 @@ export const fallbackCategories: Category[] = [
     name_ru: 'Креатин',
     name_en: 'Creatine',
     slug: 'creatine',
-    image_url: null,
-    description: null,
+    image_url: undefined,
+    description: undefined,
     created_at: '2024-01-01T00:00:00Z',
   },
 ]
 
 export const fallbackBrands: Brand[] = [
-  { id: 'brand-1', name: 'Optimum Nutrition', logo_url: null, created_at: '2024-01-01T00:00:00Z' },
-  { id: 'brand-2', name: 'Dymatize', logo_url: null, created_at: '2024-01-01T00:00:00Z' },
-  { id: 'brand-3', name: 'BSN', logo_url: null, created_at: '2024-01-01T00:00:00Z' },
-  { id: 'brand-4', name: 'MuscleTech', logo_url: null, created_at: '2024-01-01T00:00:00Z' },
+  { id: 'brand-1', name: 'Optimum Nutrition', logo_url: undefined, created_at: '2024-01-01T00:00:00Z' },
+  { id: 'brand-2', name: 'Dymatize', logo_url: undefined, created_at: '2024-01-01T00:00:00Z' },
+  { id: 'brand-3', name: 'BSN', logo_url: undefined, created_at: '2024-01-01T00:00:00Z' },
+  { id: 'brand-4', name: 'MuscleTech', logo_url: undefined, created_at: '2024-01-01T00:00:00Z' },
 ]
 
 export const fallbackProducts: Product[] = [
@@ -90,7 +90,7 @@ export const fallbackProducts: Product[] = [
     description_ru: 'Гидролизованный изолят сыворотки — максимальная чистота и скорость усвоения.',
     description_en: 'Hydrolyzed whey isolate — maximum purity and absorption speed.',
     price: 78000,
-    discount_price: null,
+    discount_price: undefined,
     stock_quantity: 30,
     images: [],
     rating: 4.7,
@@ -113,7 +113,7 @@ export const fallbackProducts: Product[] = [
     description_ru: 'Аминокислоты с разветвлённой цепью в соотношении 2:1:1. Поддержка мышц во время тренировок.',
     description_en: 'Branched-chain amino acids in 2:1:1 ratio.',
     price: 42000,
-    discount_price: null,
+    discount_price: undefined,
     stock_quantity: 80,
     images: [],
     rating: 4.5,
@@ -159,7 +159,7 @@ export const fallbackProducts: Product[] = [
     description_ru: 'Комплекс из 75 активных ингредиентов для мужчин, ведущих активный образ жизни.',
     description_en: 'Complex of 75 active ingredients for active men.',
     price: 35000,
-    discount_price: null,
+    discount_price: undefined,
     stock_quantity: 60,
     images: [],
     rating: 4.6,
