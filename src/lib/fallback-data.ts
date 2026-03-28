@@ -1,0 +1,219 @@
+/**
+ * Fallback data — used when Supabase is unavailable (free tier pause).
+ * Returned automatically by API routes on connection errors.
+ */
+
+import type { Product, Category, Brand } from '@/types/database'
+
+export const fallbackCategories: Category[] = [
+  {
+    id: 'cat-1',
+    name_ko: '프로틴',
+    name_ru: 'Протеин',
+    name_en: 'Protein',
+    slug: 'protein',
+    image_url: null,
+    description: null,
+    created_at: '2024-01-01T00:00:00Z',
+  },
+  {
+    id: 'cat-2',
+    name_ko: '아미노산',
+    name_ru: 'Аминокислоты',
+    name_en: 'Amino Acids',
+    slug: 'amino-acids',
+    image_url: null,
+    description: null,
+    created_at: '2024-01-01T00:00:00Z',
+  },
+  {
+    id: 'cat-3',
+    name_ko: '비타민',
+    name_ru: 'Витамины',
+    name_en: 'Vitamins',
+    slug: 'vitamins',
+    image_url: null,
+    description: null,
+    created_at: '2024-01-01T00:00:00Z',
+  },
+  {
+    id: 'cat-4',
+    name_ko: '크레아틴',
+    name_ru: 'Креатин',
+    name_en: 'Creatine',
+    slug: 'creatine',
+    image_url: null,
+    description: null,
+    created_at: '2024-01-01T00:00:00Z',
+  },
+]
+
+export const fallbackBrands: Brand[] = [
+  { id: 'brand-1', name: 'Optimum Nutrition', logo_url: null, created_at: '2024-01-01T00:00:00Z' },
+  { id: 'brand-2', name: 'Dymatize', logo_url: null, created_at: '2024-01-01T00:00:00Z' },
+  { id: 'brand-3', name: 'BSN', logo_url: null, created_at: '2024-01-01T00:00:00Z' },
+  { id: 'brand-4', name: 'MuscleTech', logo_url: null, created_at: '2024-01-01T00:00:00Z' },
+]
+
+export const fallbackProducts: Product[] = [
+  {
+    id: 'prod-1',
+    category_id: 'cat-1',
+    brand_id: 'brand-1',
+    name_ko: '골드 스탠다드 100% 웨이',
+    name_ru: 'Gold Standard 100% Whey',
+    name_en: 'Gold Standard 100% Whey',
+    slug: 'gold-standard-whey',
+    description_ru: 'Классический сывороточный протеин с 24г белка на порцию. Быстрое усвоение, широкий выбор вкусов.',
+    description_en: 'Classic whey protein with 24g of protein per serving.',
+    price: 65000,
+    discount_price: 58000,
+    stock_quantity: 50,
+    images: [],
+    rating: 4.8,
+    reviews_count: 124,
+    is_featured: true,
+    is_new: false,
+    created_at: '2024-01-01T00:00:00Z',
+    updated_at: '2024-01-01T00:00:00Z',
+    category: fallbackCategories[0],
+    brand: fallbackBrands[0],
+  },
+  {
+    id: 'prod-2',
+    category_id: 'cat-1',
+    brand_id: 'brand-2',
+    name_ko: 'ISO-100 하이드롤라이즈드',
+    name_ru: 'ISO-100 Hydrolyzed',
+    name_en: 'ISO-100 Hydrolyzed',
+    slug: 'iso-100-hydrolyzed',
+    description_ru: 'Гидролизованный изолят сыворотки — максимальная чистота и скорость усвоения.',
+    description_en: 'Hydrolyzed whey isolate — maximum purity and absorption speed.',
+    price: 78000,
+    discount_price: null,
+    stock_quantity: 30,
+    images: [],
+    rating: 4.7,
+    reviews_count: 89,
+    is_featured: true,
+    is_new: false,
+    created_at: '2024-01-02T00:00:00Z',
+    updated_at: '2024-01-02T00:00:00Z',
+    category: fallbackCategories[0],
+    brand: fallbackBrands[1],
+  },
+  {
+    id: 'prod-3',
+    category_id: 'cat-2',
+    brand_id: 'brand-3',
+    name_ko: 'BCAA 5000 파우더',
+    name_ru: 'BCAA 5000 Powder',
+    name_en: 'BCAA 5000 Powder',
+    slug: 'bcaa-5000-powder',
+    description_ru: 'Аминокислоты с разветвлённой цепью в соотношении 2:1:1. Поддержка мышц во время тренировок.',
+    description_en: 'Branched-chain amino acids in 2:1:1 ratio.',
+    price: 42000,
+    discount_price: null,
+    stock_quantity: 80,
+    images: [],
+    rating: 4.5,
+    reviews_count: 56,
+    is_featured: false,
+    is_new: true,
+    created_at: '2024-02-01T00:00:00Z',
+    updated_at: '2024-02-01T00:00:00Z',
+    category: fallbackCategories[1],
+    brand: fallbackBrands[2],
+  },
+  {
+    id: 'prod-4',
+    category_id: 'cat-4',
+    brand_id: 'brand-4',
+    name_ko: '크레아틴 모노하이드레이트',
+    name_ru: 'Creatine Monohydrate',
+    name_en: 'Creatine Monohydrate',
+    slug: 'creatine-monohydrate',
+    description_ru: 'Чистый моногидрат креатина — повышает силу и выносливость.',
+    description_en: 'Pure creatine monohydrate for strength and endurance.',
+    price: 28000,
+    discount_price: 24000,
+    stock_quantity: 100,
+    images: [],
+    rating: 4.9,
+    reviews_count: 201,
+    is_featured: true,
+    is_new: false,
+    created_at: '2024-01-15T00:00:00Z',
+    updated_at: '2024-01-15T00:00:00Z',
+    category: fallbackCategories[3],
+    brand: fallbackBrands[3],
+  },
+  {
+    id: 'prod-5',
+    category_id: 'cat-3',
+    brand_id: 'brand-1',
+    name_ko: '옵티멈 뉴트리션 멀티비타민',
+    name_ru: 'Opti-Men Multivitamin',
+    name_en: 'Opti-Men Multivitamin',
+    slug: 'opti-men-multivitamin',
+    description_ru: 'Комплекс из 75 активных ингредиентов для мужчин, ведущих активный образ жизни.',
+    description_en: 'Complex of 75 active ingredients for active men.',
+    price: 35000,
+    discount_price: null,
+    stock_quantity: 60,
+    images: [],
+    rating: 4.6,
+    reviews_count: 77,
+    is_featured: false,
+    is_new: true,
+    created_at: '2024-03-01T00:00:00Z',
+    updated_at: '2024-03-01T00:00:00Z',
+    category: fallbackCategories[2],
+    brand: fallbackBrands[0],
+  },
+  {
+    id: 'prod-6',
+    category_id: 'cat-1',
+    brand_id: 'brand-3',
+    name_ko: 'TRUE-MASS 1200',
+    name_ru: 'True-Mass 1200 Gainer',
+    name_en: 'True-Mass 1200 Gainer',
+    slug: 'true-mass-1200',
+    description_ru: 'Высококалорийный гейнер для набора массы — 50г белка и 222г углеводов на порцию.',
+    description_en: 'High-calorie mass gainer — 50g protein and 222g carbs per serving.',
+    price: 82000,
+    discount_price: 74000,
+    stock_quantity: 25,
+    images: [],
+    rating: 4.4,
+    reviews_count: 43,
+    is_featured: false,
+    is_new: false,
+    created_at: '2024-01-10T00:00:00Z',
+    updated_at: '2024-01-10T00:00:00Z',
+    category: fallbackCategories[0],
+    brand: fallbackBrands[2],
+  },
+]
+
+export const FALLBACK_PAGINATION = {
+  page: 1,
+  limit: 12,
+  total: fallbackProducts.length,
+  totalPages: 1,
+}
+
+/** Checks if an error is a Supabase connection/availability error */
+export function isConnectionError(error: unknown): boolean {
+  if (!error) return false
+  const msg = String(error).toLowerCase()
+  return (
+    msg.includes('fetch failed') ||
+    msg.includes('econnrefused') ||
+    msg.includes('network') ||
+    msg.includes('timeout') ||
+    msg.includes('enotfound') ||
+    msg.includes('503') ||
+    msg.includes('unavailable')
+  )
+}

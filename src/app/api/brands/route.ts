@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabase'
 import { NextResponse } from 'next/server'
+import { fallbackBrands } from '@/lib/fallback-data'
 
 export async function GET() {
   try {
@@ -12,10 +13,7 @@ export async function GET() {
 
     return NextResponse.json(brands)
   } catch (error) {
-    console.error('Error fetching brands:', error)
-    return NextResponse.json(
-      { error: 'Failed to fetch brands' },
-      { status: 500 }
-    )
+    console.warn('[brands] Supabase unavailable, using fallback data:', error)
+    return NextResponse.json(fallbackBrands)
   }
-} 
+}
