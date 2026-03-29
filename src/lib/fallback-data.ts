@@ -4,6 +4,13 @@
  */
 
 import type { Product, Category, Brand } from '@/types/database'
+import type {
+  BlogCategoryWithCount,
+  BlogTagWithCount,
+  BlogPostPreview,
+  BlogAuthor,
+} from '@/types/blog'
+
 
 export const fallbackCategories: Category[] = [
   {
@@ -223,3 +230,107 @@ export function isConnectionError(error: unknown): boolean {
     msg.includes('unavailable')
   )
 }
+
+// ─── Blog fallback data ────────────────────────────────────────────────────────
+
+const fallbackBlogAuthor: BlogAuthor = {
+  id: 'author-1',
+  name: 'JumFlex Team',
+  email: 'info@jumflex.com',
+  avatar_url: null,
+}
+
+export const fallbackBlogCategories: BlogCategoryWithCount[] = [
+  {
+    id: 'bcat-1',
+    name_ko: '영양',
+    name_ru: 'Питание',
+    name_en: 'Nutrition',
+    slug: 'nutrition',
+    description: null,
+    created_at: '2024-01-01T00:00:00Z',
+    posts_count: 3,
+  },
+  {
+    id: 'bcat-2',
+    name_ko: '트레이닝',
+    name_ru: 'Тренировки',
+    name_en: 'Training',
+    slug: 'training',
+    description: null,
+    created_at: '2024-01-01T00:00:00Z',
+    posts_count: 2,
+  },
+  {
+    id: 'bcat-3',
+    name_ko: '리뷰',
+    name_ru: 'Обзоры',
+    name_en: 'Reviews',
+    slug: 'reviews',
+    description: null,
+    created_at: '2024-01-01T00:00:00Z',
+    posts_count: 2,
+  },
+]
+
+export const fallbackBlogTags: BlogTagWithCount[] = [
+  { id: 'tag-1', name: 'Протеин', slug: 'protein', created_at: '2024-01-01T00:00:00Z', posts_count: 3 },
+  { id: 'tag-2', name: 'Похудение', slug: 'weight-loss', created_at: '2024-01-01T00:00:00Z', posts_count: 2 },
+  { id: 'tag-3', name: 'Набор массы', slug: 'muscle-gain', created_at: '2024-01-01T00:00:00Z', posts_count: 2 },
+  { id: 'tag-4', name: 'Новичкам', slug: 'beginners', created_at: '2024-01-01T00:00:00Z', posts_count: 1 },
+]
+
+export const fallbackBlogPosts: BlogPostPreview[] = [
+  {
+    id: 'post-1',
+    title: 'Как выбрать протеин: полный гид для начинающих',
+    slug: 'how-to-choose-protein',
+    excerpt: 'Разбираем виды протеина — сывороточный, казеин, растительный — и объясняем, кому что подходит.',
+    cover_image: null,
+    author: fallbackBlogAuthor,
+    category: fallbackBlogCategories[0],
+    status: 'published',
+    views_count: 1240,
+    published_at: '2024-02-15T09:00:00Z',
+    created_at: '2024-02-14T00:00:00Z',
+  },
+  {
+    id: 'post-2',
+    title: 'BCAA: нужны ли они вам на самом деле?',
+    slug: 'do-you-need-bcaa',
+    excerpt: 'Разбираем научные данные: когда BCAA реально работают, а когда это просто маркетинг.',
+    cover_image: null,
+    author: fallbackBlogAuthor,
+    category: fallbackBlogCategories[0],
+    status: 'published',
+    views_count: 870,
+    published_at: '2024-03-01T09:00:00Z',
+    created_at: '2024-03-01T00:00:00Z',
+  },
+  {
+    id: 'post-3',
+    title: 'Программа тренировок для набора мышечной массы',
+    slug: 'muscle-gain-program',
+    excerpt: '8-недельная программа с базовыми упражнениями для эффективного набора массы.',
+    cover_image: null,
+    author: fallbackBlogAuthor,
+    category: fallbackBlogCategories[1],
+    status: 'published',
+    views_count: 2100,
+    published_at: '2024-03-10T09:00:00Z',
+    created_at: '2024-03-10T00:00:00Z',
+  },
+  {
+    id: 'post-4',
+    title: 'Обзор Optimum Nutrition Gold Standard Whey',
+    slug: 'on-gold-standard-review',
+    excerpt: 'Честный обзор самого популярного протеина в мире — состав, вкус, растворимость, цена.',
+    cover_image: null,
+    author: fallbackBlogAuthor,
+    category: fallbackBlogCategories[2],
+    status: 'published',
+    views_count: 3450,
+    published_at: '2024-03-20T09:00:00Z',
+    created_at: '2024-03-20T00:00:00Z',
+  },
+]

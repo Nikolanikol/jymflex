@@ -1,9 +1,9 @@
 import { supabase } from '@/lib/supabase';
 import { NextResponse } from 'next/server';
+import { fallbackBlogTags } from '@/lib/fallback-data';
 
 export async function GET() {
   try {
-    // Получаем все теги
     const { data: tags, error } = await supabase
       .from('blog_tags')
       .select('*')
@@ -11,7 +11,6 @@ export async function GET() {
 
     if (error) throw error;
 
-    // Опционально: получаем количество постов для каждого тега
     const tagsWithCount = await Promise.all(
       (tags || []).map(async (tag) => {
         const { count } = await supabase
@@ -19,19 +18,13 @@ export async function GET() {
           .select('post_id', { count: 'exact', head: true })
           .eq('tag_id', tag.id);
 
-        return {
-          ...tag,
-          posts_count: count || 0,
-        };
+        return { ...tag, posts_count: count || 0 };
       })
     );
 
     return NextResponse.json(tagsWithCount);
   } catch (error) {
-    console.error('Error fetching blog tags:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch blog tags' },
-      { status: 500 }
-    );
+    console.warn('[blog/tags] Supabase unavailable, using fallback data:', error);
+    return NextResponse.json(fallbackBlogTags);
   }
 }
