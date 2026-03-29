@@ -2,6 +2,13 @@
 
 > Full-stack e-commerce platform for a sports nutrition store. Built with Next.js 16, Supabase, and NextAuth. Includes a full admin panel, blog CMS, product ratings, reviews, and Google OAuth.
 
+## Screenshots
+
+![Screen 1](public/screenshots/screen1.png)
+![Screen 2](public/screenshots/screen2.png)
+![Screen 3](public/screenshots/screen3.png)
+![Screen 4](public/screenshots/screen4.png)
+
 ---
 
 ## Features
